@@ -389,7 +389,10 @@ export default function EnhancedBakeryUI() {
           </div>
 
           {/* Search and Filter Bar */}
+          {/* Search + Categories Container */}
+          {/* Search + Categories Dropdown */}
           <div className="flex flex-col lg:flex-row gap-4 mb-12">
+            {/* Search Input */}
             <div className="flex-1 relative">
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
@@ -400,39 +403,22 @@ export default function EnhancedBakeryUI() {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-          </div>
 
-          {/* Enhanced Categories */}
-          <div className="flex flex-wrap justify-center gap-4 mb-16">
-            {categories.map((category, index) => (
-              <button
-                key={category.name}
-                onClick={() => setSelectedCategory(category.name)}
-                className={`group relative overflow-hidden px-8 py-4 rounded-2xl font-semibold transition-all duration-500 transform hover:scale-105 ${
-                  selectedCategory === category.name
-                    ? "text-white shadow-2xl scale-105"
-                    : "bg-white text-gray-700 hover:text-white shadow-lg hover:shadow-xl"
-                }`}
-                style={{
-                  background:
-                    selectedCategory === category.name
-                      ? `linear-gradient(135deg, var(--tw-gradient-stops))`
-                      : undefined,
-                  "--tw-gradient-from":
-                    selectedCategory === category.name ? "#14b8a6" : undefined,
-                  "--tw-gradient-to":
-                    selectedCategory === category.name ? "#06b6d4" : undefined,
-                }}
+            {/* Category Dropdown for All Screens */}
+            <div className="w-full lg:w-64">
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="w-full px-4 py-4 rounded-2xl border-2 border-gray-200 focus:border-teal-500 focus:outline-none text-lg bg-white text-gray-700"
               >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-r ${category.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-                />
-                <div className="relative flex items-center gap-3">
-                  <span className="text-2xl">{category.icon}</span>
-                  <span className="text-lg">{category.name}</span>
-                </div>
-              </button>
-            ))}
+                <option value="">All Categories</option>
+                {categories.map((category) => (
+                  <option key={category.name} value={category.name}>
+                    {category.name}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
 
           {/* Products Grid */}
