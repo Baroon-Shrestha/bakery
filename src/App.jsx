@@ -5,10 +5,12 @@ import ProductsPage from "./Pages/ProductsPage";
 import ContactPage from "./Pages/ContactPage";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import ScrollToTop from "./Components/HelperComponents/ScrollToTop";
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

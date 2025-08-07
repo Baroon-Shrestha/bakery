@@ -1,7 +1,8 @@
 import React from "react";
 import AboutHero from "./AboutHero";
-import AboutMission from "./ABoutMission";
+
 import AboutHistory from "./AboutHistory";
+import AboutMission from "./AboutMission";
 
 export default function AboutMain() {
   return (
