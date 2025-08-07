@@ -23,7 +23,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="bg-gradient-to-br from-[#fefaf6] to-[#f9f7f4] py-16 px-6 md:px-20">
+    <section className="bg-gray-50 py-16 px-6 md:px-20">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
