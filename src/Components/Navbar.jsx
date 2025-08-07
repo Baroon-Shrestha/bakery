@@ -49,15 +49,17 @@ export default function Navbar() {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div
-              className={`text-3xl font-bold transition-all duration-500 cursor-pointer hover:scale-105 ${
-                isScrolled
-                  ? "text-[#009F8A] drop-shadow-sm"
-                  : "text-white drop-shadow-lg"
-              }`}
-            >
-              🍰 Cakes
-            </div>
+            <Link to="/">
+              <div
+                className={`text-3xl font-bold transition-all duration-500 cursor-pointer hover:scale-105 ${
+                  isScrolled
+                    ? "text-[#009F8A] drop-shadow-sm"
+                    : "text-white drop-shadow-lg"
+                }`}
+              >
+                🍰 Cakes
+              </div>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-x-2">
